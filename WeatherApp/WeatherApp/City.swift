@@ -9,10 +9,6 @@
 import UIKit
 
 class City: NSObject {
-    let cityName:String!
     var WeatherInfo:String!
     
-    init(cityName:String) {
-        self.cityName = cityName
-    }
 }

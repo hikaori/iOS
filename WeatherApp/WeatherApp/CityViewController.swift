@@ -2,17 +2,39 @@
 //  CityViewController.swift
 //  WeatherApp
 //
-//  Created by kaori hirata on 2017-09-19.
+//  Created by kaori hirata on 2017-09-20.
 //  Copyright © 2017 Derrick Park. All rights reserved.
 //
 
 import UIKit
 
-class CityViewController: NSObject {
-    var city:City
+class CityViewController: UIViewController {
+    var DetailVC = DetailedViewController()
     
-    
-    init(city:City) {
-        self.city = city
+    func showWeatherDetails(){
+        let DetailVCInstance = DetailedViewController()
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
