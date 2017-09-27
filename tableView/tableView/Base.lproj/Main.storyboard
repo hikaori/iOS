@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tjw-Yq-PHU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="95b-lo-cqp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="110" id="DL6-3m-pZv" customClass="CustomTableViewCell" customModule="tableView" customModuleProvider="target">
@@ -80,11 +80,33 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="95b-lo-cqp" secondAttribute="bottom" id="TGR-pi-7Np"/>
                             <constraint firstItem="95b-lo-cqp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TZ0-xm-GJt"/>
                             <constraint firstAttribute="trailing" secondItem="95b-lo-cqp" secondAttribute="trailing" id="TZM-fm-gVq"/>
-                            <constraint firstItem="95b-lo-cqp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="quv-sZ-GLz"/>
+                            <constraint firstItem="95b-lo-cqp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="quv-sZ-GLz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="s6C-oC-bnU"/>
+                    <connections>
+                        <outlet property="myTableView" destination="95b-lo-cqp" id="8bH-5g-vyF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hh7-8A-JFm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tjw-Yq-PHU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oSd-ZI-Ged">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="84P-ze-yJE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1EV-Zw-wBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>

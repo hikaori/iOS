@@ -17,9 +17,7 @@ struct SetBugs {
         notScarybugs.append(ScaryBug(withName: "Ladybug", imageName: "ladybug.jpg", howScary: .NotScary))
         notScarybugs.append(ScaryBug(withName: "Caterpillar", imageName: "caterpillar.jpg", howScary: .NotScary))
         notScarybugs.append(ScaryBug(withName: "Fly", imageName: "fly.jpg", howScary: .NotScary))
-        notScarybugs.append(ScaryBug(withName: "Fly", imageName: "fly.jpg", howScary: .NotScary))
-        notScarybugs.append(ScaryBug(withName: "Fly", imageName: "fly.jpg", howScary: .NotScary))
-        notScarybugs.append(ScaryBug(withName: "Fly", imageName: "fly.jpg", howScary: .NotScary))
+       
         let notScaryBugs = Bugs(name:"notScaryBugs",bugArray: notScarybugs)
         return notScaryBugs
     }
