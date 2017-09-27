@@ -8,6 +8,7 @@
 
 import UIKit
 
+// enum -> String
 enum ScaryFactor: Int {
     case NotScary
     case ALittleScary
@@ -19,20 +20,17 @@ enum ScaryFactor: Int {
 class ScaryBug {
     
     var name: String
-    var image: UIImage?
+    var imageName: String
     var howScary: ScaryFactor
     
-    init(withName name: String, imageName: String?, howScary: ScaryFactor) {
+    init(withName name: String, imageName: String, howScary: ScaryFactor) {
         self.name = name
         self.howScary = howScary
-        if let imageName = imageName {
-            if let image = UIImage(named: imageName) {
-                self.image = image
-            }
-        }
+        self.imageName = imageName
         
     }
     
+    // what does this method do?
     static func scaryFactorToString(scaryFactor:ScaryFactor) -> String {
         var scaryString = ""
         switch(scaryFactor) {
@@ -76,5 +74,5 @@ class ScaryBug {
         bugs.append(ScaryBug(withName: "Stink Bug", imageName: "stinkbug.jpg", howScary: .ALittleScary))
         return bugs
     }
-    
 }
+

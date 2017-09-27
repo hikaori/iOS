@@ -24,5 +24,12 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    /// 画像・タイトル・説明文を設定するメソッド
+    func setCell(imageName: String, titleText: String, descriptionText: String) {
+        myImageView.image = UIImage(named: imageName)
+        myTitleLabel.text = titleText
+        myDescriptionLabel.text = descriptionText
+    }
 
 }

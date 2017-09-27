@@ -9,22 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
-    
-    
-    let imageNames = ["centipede.jpg", "ladybug.jpg", "potatoBug.jpg", "wolfSpider.jpg"]
-    
-    /// 画像のタイトル
-    let imageTitles = ["Centipede", "Ladybug", "potatoBug", "wolfSpider"]
-    
-    /// 画像の説明
-    let imageDescriptions = [
-        "aaaaaa",
-        "bbbbbb",
-        "cccccc",
-        "dddddd"
-    ]
-    
 
+    
+    var setBugs = SetBugs.scaryBugSet()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -34,31 +22,35 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    /// セルの個数を指定するデリゲートメソッド（必須）
-    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int{
-        return imageNames.count
+////         for create section
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return setBugs.count
+    }
+    ///  for ccreate section title
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return ScaryBug.scaryFactorToString(scaryFactor: setBugs[section].bugArray[0].howScary)
+        return setBugs[section].name
     }
     
-    //各セルの要素を設定する
-    func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    // for delete bug
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            setBugs[indexPath.section].bugArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        }
+    }
+    
+    /// セルの個数を指定するデリゲートメソッド（必須）
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int{
+        return setBugs[section].bugArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // セルを取得    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as! CustomTableViewCell
         
-        // tableCell の ID で UITableViewCell のインスタンスを生成
-        let cell = table.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        
-        let img = UIImage(named:"\(imageNames[indexPath.row])")
-        
-        // Tag番号 1 で UIImageView インスタンスの生成
-        let imageView = table.viewWithTag(1) as! UIImageView
-        imageView.image = img
-        
-        // Tag番号 ２ で UILabel インスタンスの生成
-        let label1 = table.viewWithTag(2) as! UILabel
-        label1.text = "No.\(indexPath.row + 1)"
-        
-        // Tag番号 ３ で UILabel インスタンスの生成
-        let label2 = table.viewWithTag(3) as! UILabel
-        label2.text = "\(imageDescriptions[indexPath.row])"
-        
+        // セルに値を設定
+        cell.setCell(imageName:setBugs[indexPath.section].bugArray[indexPath.row].imageName, titleText: setBugs[indexPath.section].bugArray[indexPath.row].name, descriptionText: ScaryBug.scaryFactorToString(scaryFactor: setBugs[indexPath.section].bugArray[indexPath.row].howScary))
         return cell
     }
     
