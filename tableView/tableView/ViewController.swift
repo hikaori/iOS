@@ -20,6 +20,10 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         
         navigationItem.rightBarButtonItem = editButtonItem
     }
+    //after came bake from editiong view ,this method will fire
+    override func viewWillAppear(_ animated: Bool) {
+        myTableView.reloadData()
+    }
     
 
     override func didReceiveMemoryWarning() {
@@ -49,24 +53,55 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         }
        
     }
+    // change left button style(red - /green +)
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        let lastRow = setBugs[indexPath.section].bugArray.count
+        // why not '==' ?
+        if indexPath.row >= lastRow {
+            return .insert
+        } else {
+            return .delete
+        }
+    }
     
-////         for create section
+    //for create section
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return setBugs.count
     }
-    ///  for ccreate section title
+    //for ccreate section title
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return ScaryBug.scaryFactorToString(scaryFactor: setBugs[section].bugArray[0].howScary)
         
         return setBugs[section].name
     }
     
-    // for delete bug
+    // for delete / add bug
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             setBugs[indexPath.section].bugArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        }
+        else if editingStyle == UITableViewCellEditingStyle.insert{
+            let newScaryBug = ScaryBug(withName: "New Bug Name", imageName: "", howScary: .Non)
+            setBugs[indexPath.section].bugArray.append(newScaryBug)
+            tableView.insertRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        }
+    }
+    
+    // Adding a row by tapping the entire row part01
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if isEditing && indexPath.row < setBugs[indexPath.section].bugArray.count{
+            return nil
+        }
+        else{
+            return indexPath
+        }
+    }
+    // Adding a row by tapping the entire row part02
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row >= setBugs[indexPath.section].bugArray.count && isEditing {
+            self.tableView(tableView, commit: .insert, forRowAt: indexPath)
         }
     }
     
@@ -84,9 +119,9 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         let set =  setBugs[indexPath.section]
         if indexPath.row >= set.bugArray.count {
             //追加したセルに要素（imageName/titleText/descriptionText）の値をセット。
-            cell.setCell(imageName: "", titleText: "Add a New Bug", descriptionText: "")
+            cell.setCell(imageName: "", titleText: "Add a New Bug", descriptionText: "",rateImage: "")
         } else {
-            cell.setCell(imageName:setBugs[indexPath.section].bugArray[indexPath.row].imageName, titleText: setBugs[indexPath.section].bugArray[indexPath.row].name, descriptionText: ScaryBug.scaryFactorToString(scaryFactor: setBugs[indexPath.section].bugArray[indexPath.row].howScary))
+            cell.setCell(imageName:setBugs[indexPath.section].bugArray[indexPath.row].imageName, titleText: setBugs[indexPath.section].bugArray[indexPath.row].name, descriptionText: ScaryBug.scaryFactorToString(scaryFactor: setBugs[indexPath.section].bugArray[indexPath.row].howScary),rateImage: "shockedface2_empty")
         }
         // セルに値を設定
        

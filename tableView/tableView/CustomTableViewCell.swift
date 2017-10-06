@@ -13,6 +13,9 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var myTitleLabel: UILabel!
     @IBOutlet weak var myDescriptionLabel: UILabel!
+    @IBOutlet weak var myRate: UIImageView!
+   
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,10 +29,11 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     /// 画像・タイトル・説明文を設定するメソッド
-    func setCell(imageName: String, titleText: String, descriptionText: String) {
+    func setCell(imageName: String, titleText: String, descriptionText: String, rateImage:String) {
         myImageView.image = UIImage(named: imageName)
         myTitleLabel.text = titleText
         myDescriptionLabel.text = descriptionText
+        myRate.image = UIImage(named: rateImage)
     }
 
 }

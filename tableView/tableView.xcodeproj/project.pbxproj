@@ -15,6 +15,7 @@
 		DC2F73301F7984D9005E928C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F732F1F7984D9005E928C /* CustomTableViewCell.swift */; };
 		DC2F73321F7994BA005E928C /* ScaryBug.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F73311F7994BA005E928C /* ScaryBug.swift */; };
 		DC2F73721F7B38CF005E928C /* Bugs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F73711F7B38CF005E928C /* Bugs.swift */; };
+		DC2F73D41F7D6481005E928C /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F73D31F7D6481005E928C /* EditTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DC2F732F1F7984D9005E928C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		DC2F73311F7994BA005E928C /* ScaryBug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaryBug.swift; sourceTree = "<group>"; };
 		DC2F73711F7B38CF005E928C /* Bugs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bugs.swift; sourceTree = "<group>"; };
+		DC2F73D31F7D6481005E928C /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DC2F73271F798147005E928C /* Info.plist */,
 				DC2F73311F7994BA005E928C /* ScaryBug.swift */,
 				DC2F73711F7B38CF005E928C /* Bugs.swift */,
+				DC2F73D31F7D6481005E928C /* EditTableViewController.swift */,
 			);
 			path = tableView;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC2F731E1F798147005E928C /* ViewController.swift in Sources */,
+				DC2F73D41F7D6481005E928C /* EditTableViewController.swift in Sources */,
 				DC2F73321F7994BA005E928C /* ScaryBug.swift in Sources */,
 				DC2F73301F7984D9005E928C /* CustomTableViewCell.swift in Sources */,
 				DC2F731C1F798147005E928C /* AppDelegate.swift in Sources */,
