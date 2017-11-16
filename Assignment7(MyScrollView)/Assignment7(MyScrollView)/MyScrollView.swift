@@ -12,13 +12,9 @@ class MyScrollView: UIView {
     
     var contentSize:CGSize = CGSize(width:100, height:100)
     
+    let gestureRec = UIPanGestureRecognizer(target: self, action: #selector(handleGesture))
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @objc func handleGesture(gestureRec: UIPanGestureRecognizer) {
+        self.bounds.origin.y = 100
     }
-    */
-
 }

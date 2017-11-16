@@ -14,11 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
 //        simpleQueues()
-//        queuesWithQoS()
+        queuesWithQoS()
 //        concurrentQueues()
 //        queueWithDelay()
 //        globalQueues()
-        fetchData()
+//        fetchData()
 //        useWorkItem()
 
     }
