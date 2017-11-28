@@ -38,39 +38,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GiH-hu-oWh">
-                                <rect key="frame" x="120" y="564" width="161" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="hck-cR-Zaz">
+                                <rect key="frame" x="88" y="565" width="200" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUw-fR-Z91">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="27x-t9-3VW"/>
+                                            <constraint firstAttribute="height" constant="70" id="cut-wP-7LB"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="0.4279123152" blue="0.16314708959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" title="cansel"/>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="39q-aq-dP5" eventType="touchUpInside" id="jea-Hk-aR4"/>
+                                            <action selector="tabbAction:" destination="39q-aq-dP5" eventType="touchUpInside" id="Xja-uE-IMR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNh-gn-mE7">
+                                        <rect key="frame" x="150" y="0.0" width="50" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="WV3-V4-dTm"/>
+                                            <constraint firstAttribute="width" constant="50" id="whD-27-wpv"/>
+                                        </constraints>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" red="0.35510282240000002" green="1" blue="0.057794608490000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" title="add"/>
+                                        <connections>
+                                            <action selector="submitButtonTapped:" destination="39q-aq-dP5" eventType="touchUpInside" id="S26-KX-2oZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNh-gn-mE7">
-                                <rect key="frame" x="220" y="564" width="50" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="WV3-V4-dTm"/>
-                                    <constraint firstAttribute="width" constant="50" id="whD-27-wpv"/>
-                                </constraints>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" red="0.35510282240000002" green="1" blue="0.057794608490000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="disabled" title="add"/>
-                                <connections>
-                                    <action selector="submitButtonTapped:" destination="39q-aq-dP5" eventType="touchUpInside" id="S26-KX-2oZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUw-fR-Z91">
-                                <rect key="frame" x="138" y="565" width="50" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="27x-t9-3VW"/>
-                                    <constraint firstAttribute="height" constant="70" id="cut-wP-7LB"/>
-                                </constraints>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="1" green="0.4279123152" blue="0.16314708959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="disabled" title="cansel"/>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="39q-aq-dP5" eventType="touchUpInside" id="jea-Hk-aR4"/>
-                                    <action selector="tabbAction:" destination="39q-aq-dP5" eventType="touchUpInside" id="Xja-uE-IMR"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-L1-FQW">
                                 <rect key="frame" x="16" y="220" width="343" height="229"/>
                                 <subviews>
@@ -162,18 +163,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hVf-L1-FQW" firstAttribute="leading" secondItem="Prd-Ew-kdf" secondAttribute="leadingMargin" id="NoM-dt-BBt"/>
+                            <constraint firstItem="9sb-P6-tgH" firstAttribute="top" secondItem="hck-cR-Zaz" secondAttribute="bottom" constant="32" id="Tom-Lp-rU7"/>
                             <constraint firstItem="hVf-L1-FQW" firstAttribute="top" secondItem="HPd-oB-8zq" secondAttribute="bottom" constant="200" id="dlS-Ez-8h2"/>
+                            <constraint firstItem="hck-cR-Zaz" firstAttribute="centerX" secondItem="Prd-Ew-kdf" secondAttribute="centerX" id="sSh-t5-eLK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hVf-L1-FQW" secondAttribute="trailing" id="w3n-Xy-0ve"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="completedSwich" destination="7g6-KL-hRz" id="ehG-FB-kjO"/>
-                        <outlet property="descriptionField" destination="qXg-3i-obB" id="Ayi-EG-UFm"/>
-                        <outlet property="priorityField" destination="Ijg-iK-LBo" id="pBn-ms-TuI"/>
-                        <outlet property="submitButton" destination="dUw-fR-Z91" id="VI5-AG-33v"/>
-                        <outlet property="titleField" destination="V1Z-X0-OsG" id="nad-qp-USc"/>
-                        <outlet property="titleTestField" destination="v3y-4S-CDz" id="0L3-rf-15I"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEf-yi-uS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,15 +183,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="uVf-i6-gzW" customClass="TodoTableViewCell" customModule="NoSplit" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="uVf-i6-gzW" customClass="TodoTableViewCell" customModule="NoSplit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="22" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uVf-i6-gzW" id="z9J-mY-cn6" customClass="TodoTableViewCell" customModule="NoSplit" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uVf-i6-gzW" id="z9J-mY-cn6">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycJ-sY-Fg8">
-                                            <rect key="frame" x="34" y="22" width="162" height="20.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ycJ-sY-Fg8">
+                                            <rect key="frame" x="34" y="22" width="178" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LL6-5Y-2W8">
@@ -205,14 +200,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih4-Np-Mbk">
-                                                    <rect key="frame" x="33.5" y="0.0" width="88" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih4-Np-Mbk">
+                                                    <rect key="frame" x="41.5" y="0.0" width="88" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuD-XS-s1C">
-                                                    <rect key="frame" x="121.5" y="0.0" width="40.5" height="20.5"/>
+                                                    <rect key="frame" x="137.5" y="0.0" width="40.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
